@@ -41,6 +41,9 @@ theToggle.onclick = function() {
    return false;
 }
 
+
+
+
 var bar = new ProgressBar.Circle(container, {
   color: '#aaa',
   // This has to be the same size as the maximum width to
@@ -69,13 +72,13 @@ var bar = new ProgressBar.Circle(container, {
   }
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-bar.text.style.fontSize = '2rem';
-bar.text.style.top = '140px';
+//bar.text.style.fontSize = '2rem';
+//bar.text.style.top = '140px';
 
-bar.animate(0.8);  // Number from 0.0 to 1.0
+  // Number from 0.0 to 1.0
 
 
-var bar = new ProgressBar.Circle(container2, {
+var bar2 = new ProgressBar.Circle(container2, {
   color: '#aaa',
   // This has to be the same size as the maximum width to
   // prevent clipping
@@ -102,15 +105,15 @@ var bar = new ProgressBar.Circle(container2, {
 
   }
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-bar.text.style.fontSize = '2rem';
-bar.text.style.top = '140px';
+bar2.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+//bar2.text.style.fontSize = '2rem';
+//bar2.text.style.top = '140px';
 
-bar.animate(0.7);  // Number from 0.0 to 1.0
+  // Number from 0.0 to 1.0
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
-var bar = new ProgressBar.Circle(container3, {
+var bar3 = new ProgressBar.Circle(container3, {
   color: '#aaa',
   // This has to be the same size as the maximum width to
   // prevent clipping
@@ -137,15 +140,15 @@ var bar = new ProgressBar.Circle(container3, {
 
   }
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-bar.text.style.fontSize = '2rem';
-bar.text.style.top = '140px';
+bar3.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+//bar3.text.style.fontSize = '2rem';
+//bar3.text.style.top = '140px';
 
-bar.animate(0.5);  // Number from 0.0 to 1.0
+  // Number from 0.0 to 1.0
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
-var bar = new ProgressBar.Circle(container4, {
+var bar4 = new ProgressBar.Circle(container4, {
   color: '#aaa',
   // This has to be the same size as the maximum width to
   // prevent clipping
@@ -172,8 +175,22 @@ var bar = new ProgressBar.Circle(container4, {
 
   }
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-bar.text.style.fontSize = '2rem';
-bar.text.style.top = '140px';
+bar4.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+//bar4.text.style.fontSize = '2rem';
+//bar4.text.style.top = '140px';
 
-bar.animate(0.3);  // Number from 0.0 to 1.0
+//bar4.animate(0.3);  // Number from 0.0 to 1.0
+
+var target = $('.sills-block');
+var targetPos = target.offset().top;
+var winHeight = $(window).height();
+var scrollToElem = targetPos - winHeight;
+$(window).scroll(function(){
+  var winScrollTop = $(this).scrollTop();
+  if(winScrollTop > scrollToElem){
+    bar.animate(0.8);
+    bar2.animate(0.7);
+    bar3.animate(0.5);
+    bar4.animate(0.3);
+  }
+});
